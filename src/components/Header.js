@@ -1,12 +1,12 @@
 import React from 'react';
+import Nav from './Nav';
 import logo from '../assets/logo.svg'
 
 function Header() {
   return (
     <header>
-        <img src={logo} alt="Little Lemon Logo"/>
-        <h1>Welcome to My App</h1>
-        {/* Add more content here */}
+        <img id="logo" src={logo} alt="Little Lemon Logo"/>
+        <Nav />
     </header>
   );
 }
