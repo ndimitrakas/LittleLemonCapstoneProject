@@ -1,10 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Header from './Header';
+import Nav from './Nav';
+import Main from './Main';
+import Footer from './Footer';
 
 function App() {
   return (
-    // NOTE: Removed placeholder code from inital
-    <div className="App">Homepage</div>
+    <>
+      <Header />
+      <Nav />
+      <Main />
+      <Footer />
+    </>
   );
 }
 
