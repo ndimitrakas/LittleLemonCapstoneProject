@@ -1,9 +1,9 @@
 import './App.css';
 import React from 'react';
-import Header from './Header';
-import Nav from './Nav';
-import Main from './Main';
-import Footer from './Footer';
+import Header from './components/Header';
+import Nav from './components/Nav';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 function App() {
   return (
