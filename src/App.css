@@ -40,17 +40,26 @@
 
 /* End original styling from create-react app */
 
+/* Start General Styling */
 
-
-body {
-  background-color: lightcyan;
+a {
+  text-decoration: none;
+  color: black;
+  font-family: "Markazi Text", serif;
 }
 
-header {
-  display: flex;
-  margin: 20px;
-  justify-content: center;
-  align-items: center;
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #EE9972
+}
+
+body {
+  background-color: #EDEFEE;
+  font-family: "Markazi Text", serif;
 }
 
 
@@ -66,7 +75,9 @@ ul {
   margin: 0;
 }
 
-/* Nav Styles Start */
+/* End General Styling */
+
+/* Header + Nav Styles Start */
 nav {
   display: flex;
 }
@@ -80,10 +91,26 @@ nav li {
   padding: 0 20px 0;
 }
 
-/* Nav Styles End */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  nav li {
+    display: inline-block;
+    margin: 4px;
+  }
+}
+
+/* Header + Nav Styles End */
 
 main {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -91,9 +118,9 @@ main {
 
 footer {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  margin: 20px;
 }
 
 footer ul {
@@ -102,7 +129,13 @@ footer ul {
   display: block;
 }
 
+footer div {
+  margin: 16px;
+}
 
+footer p {
+  margin: 0;
+}
 
 footer img {
   width: auto;
@@ -113,6 +146,20 @@ footer img {
 #logo-copyright {
   display: flex;
   align-items: center;
+}
+
+@media (min-width: 769px) {
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px
+  }
+
+  footer div {
+    margin: 0 96px 0;
+  }
 }
 
 /* Footer Styles End */

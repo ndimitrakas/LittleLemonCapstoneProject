@@ -6,14 +6,14 @@ function Footer() {
     <footer>
       <div id="logo-copyright">
         <img id="footer-logo" src={footerLogo} alt="Little Lemon Footer Logo"/>
-        <h6>&copy; 2024 Little Lemon</h6>
+        <h5>&copy; 2024 Little Lemon</h5>
       </div>
       <div>
         <h5>Contact</h5>
         <ul>
-          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><p>Address</p></li>
+          <li><p>Phone</p></li>
+          <li><p>Email</p></li>
         </ul>
       </div>
       <div>
