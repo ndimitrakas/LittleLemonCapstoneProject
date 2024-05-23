@@ -113,6 +113,14 @@ header {
 
 /* Header + Nav Styles End */
 
+/* Hero Style Start */
+
+.hero {
+  display: flex;
+}
+
+/* Hero Style End */
+
 main {
   display: flex;
   flex-wrap: wrap;
