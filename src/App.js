@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import CustomersSay from './components/Main';
+import Main from './components/Main';
 import Chicago from './components/Chicago';
 import Footer from './components/Footer';
 
