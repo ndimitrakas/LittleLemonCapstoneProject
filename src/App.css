@@ -98,9 +98,10 @@ nav li {
 header {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px;
+  padding: 12px;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #FBDABB;
 }
 
 @media only screen and (max-width: 768px) {
@@ -161,7 +162,7 @@ footer img {
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    margin: 20px;
+    padding: 20px;
     background-color: #495e57;
   }
 
