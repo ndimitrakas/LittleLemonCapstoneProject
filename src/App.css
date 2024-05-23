@@ -62,6 +62,18 @@ body {
   font-family: "Markazi Text", serif;
 }
 
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
 
 h5 {
   margin: 0;
@@ -72,8 +84,35 @@ h5 {
 ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0;
   margin: 0;
+}
+
+button {
+  background-color: #495e57;
+  color: white;
+  padding: 12px 24px;
+  border: none; /* Remove default border */
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #f4e04d;
+  color: #495e57;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+button:active {
+  background-color: #e8c944;
+  transform: translateY(0); /* Reset lift when active */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* End General Styling */
@@ -112,6 +151,68 @@ header {
 }
 
 /* Header + Nav Styles End */
+
+/* Hero Style Start */
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  flex: 1; /* Allow content to take available space */
+  max-width: 600px; /* Set max-width to avoid overflow */
+  background-color: #FBDABB; /* Darken background for better text readability */
+  padding: 40px;
+  border-radius: 16px;
+  margin: 0 20px 0 0;
+}
+
+.hero img {
+  height: 350px;
+  width: auto;
+  border-radius: 16px;
+  margin: 0 0 0 20px;
+}
+
+.hero h3 {
+  margin: 10px 0;
+}
+
+.hero button {
+  margin: 30px 0 0 0 ;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero img {
+    height: 175px;
+    width: auto;
+    border-radius: 16px;
+    margin: 20px;
+  }
+
+  .hero-content {
+    flex: 1; /* Allow content to take available space */
+    max-width: 600px; /* Set max-width to avoid overflow */
+    background-color: #FBDABB; /* Darken background for better text readability */
+    padding: 40px;
+    border-radius: 16px;
+    margin: 20px;
+  }
+}
+
+/* Hero Style End */
 
 main {
   display: flex;
