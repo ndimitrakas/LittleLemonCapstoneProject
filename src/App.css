@@ -71,6 +71,10 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  margin: 0;
+}
+
 h3 {
   margin: 0;
 }
@@ -214,11 +218,50 @@ header {
 
 /* Hero Style End */
 
-main {
+/* Ratings Style End */
+
+.ratings {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  background-color: #495e57;
+  color: #EDEFEE;
+  padding: 40px;
 }
+
+.customer-ratings {
+  width: 100px;
+  height: auto;
+}
+
+.customer-profile-images {
+  width: 100px; /* Set the width or height of the image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.ratings-header {
+  margin: 0 0 20px 0;
+}
+
+.ratings li {
+  display: grid;
+  justify-items: center;
+  padding: 20px;
+}
+
+.customer-info {
+  padding: 10px 0;
+  display: grid;
+  justify-items: center;
+}
+
+.customer-info p{
+  margin-top: 4px
+}
+
+/* Ratings Style End */
 
 /* Chicago Styles Start */
 
