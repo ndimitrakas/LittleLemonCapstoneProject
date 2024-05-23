@@ -18,7 +18,7 @@ function Hero() {
             </p>
             <button>Reserve a Table</button>
         </div>
-        <img src={restaurant} />
+        <img src={restaurant} alt='Little Lemon Outdoor Dining'/>
     </section>
   );
 }

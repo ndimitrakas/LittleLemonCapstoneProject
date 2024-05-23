@@ -92,7 +92,7 @@ ul {
 
 button {
   background-color: #495e57;
-  color: white;
+  color: #EDEFEE;
   padding: 12px 24px;
   border: none; /* Remove default border */
   border-radius: 8px;
@@ -222,7 +222,56 @@ main {
 
 /* Chicago Styles Start */
 
+.chicago {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 6rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #333333;
+  color: #EDEFEE;
+  margin: auto;
+}
 
+.chicago img {
+  height: 350px;
+  width: auto;
+  border-radius: 16px;
+}
+
+.chicago-content {
+  flex: 1;
+  max-width: 600px;
+  padding: 40px;
+  border-radius: 16px;
+  margin: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 0 0;
+}
+
+.image-bottom {
+  transform: translate(-90px, -30px);
+  z-index: 1;
+}
+
+.image-top {
+  transform: translate(90px, 30px);
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .chicago img {
+    height: 175px;
+    width: auto;
+    border-radius: 16px;
+  }
+
+}
 
 
 /* Chicago Styles End */

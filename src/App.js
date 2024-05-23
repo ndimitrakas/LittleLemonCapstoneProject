@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Main from './components/Main';
+import CustomersSay from './components/CustomersSay';
 import Chicago from './components/Chicago';
 import Footer from './components/Footer';
 
@@ -11,7 +11,7 @@ function App() {
     <>
       <Header />
       <Hero />
-      <Main />
+      <CustomersSay />
       <Chicago />
       <Footer />
     </>
