@@ -367,32 +367,36 @@ header {
 }
 
 .chicago img {
-  height: 350px;
+  height: 225px;
   width: auto;
   border-radius: 16px;
 }
 
 .chicago-content {
-  flex: 1;
-  max-width: 600px;
-  padding: 40px;
+  flex: 1 1;
+  max-width: 300px;
+  padding-right: 80px;
   border-radius: 16px;
-  margin: 20px;
+  margin-right: 40px
+}
+
+.chicago-content h2 {
+  margin-bottom: 20px;
 }
 
 .image-container {
-  display: flex;
+  display: grid;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .image-bottom {
-  transform: translate(-90px, -30px);
+  transform: translate(-30px, -30px);
   z-index: 1;
 }
 
 .image-top {
-  transform: translate(90px, 30px);
+  transform: translate(30px, 30px);
   z-index: 2;
 }
 
@@ -413,6 +417,7 @@ header {
     max-width: 600px;
     padding: 0px;
     border-radius: 16px;
+    margin: 20px
   }
 
   .chicago img {
