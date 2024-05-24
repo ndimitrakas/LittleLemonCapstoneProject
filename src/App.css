@@ -220,6 +220,18 @@ header {
 
 /* Specials Style Start */
 
+.specials button:hover {
+  background-color: #f4e04d;
+  color: black;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.specials button:active {
+  background-color: #e8c944;
+  transform: translateY(0); /* Reset lift when active */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .specials {
   display: grid;
   background-color: #495e57;
@@ -240,7 +252,13 @@ header {
 .specials-card-view {
   display: flex;
   color: black;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
+.specials-card-view p {
+  flex: 1; /* Allow content to take available space */
+  max-width: 300px; /* Set max-width to avoid overflow */
 }
 
 .specials button {
@@ -252,10 +270,42 @@ header {
   display: grid;
   background-color: #FBDABB;
   justify-items: center;
+  align-items: center;
   border-radius: 16px;
   padding: 20px;
   margin: 20px 10px;
 }
+
+.specials-card-header {
+  display: flex;
+  margin: 10px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.specials-card-footer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.specials-card-footer h3{
+  margin-right: 10px;
+}
+
+.specials img {
+  height: 200px;
+  width: auto;
+  border-radius: 16px;
+}
+
+.specials-card-footer img {
+  height: 20px;
+  width: auto;
+}
+
 
 /* Specials Style End */
 
