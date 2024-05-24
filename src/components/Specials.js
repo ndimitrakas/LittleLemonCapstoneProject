@@ -25,7 +25,7 @@ function Specials() {
                     <img src={special.image} alt='image of special'/>
                     <div className='specials-card-header'>
                         <h3>{special.name}</h3>
-                        <h3>{special.price}</h3>
+                        <h3 id='price'>{special.price}</h3>
                     </div>
                     <p>{special.description}</p>
                     <div className='specials-card-footer'>
