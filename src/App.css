@@ -218,6 +218,47 @@ header {
 
 /* Hero Style End */
 
+/* Specials Style Start */
+
+.specials {
+  display: grid;
+  background-color: #495e57;
+  color: #EDEFEE;
+  padding: 40px;
+  justify-content: center;
+}
+
+.specials-header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.specials-card-view {
+  display: flex;
+  color: black;
+
+}
+
+.specials button {
+  background-color: #FBDABB;
+  color: black;
+}
+
+.specials li {
+  display: grid;
+  background-color: #FBDABB;
+  justify-items: center;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px 10px;
+}
+
+/* Specials Style End */
+
 /* Ratings Style End */
 
 .ratings {
@@ -226,8 +267,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #495e57;
-  color: #EDEFEE;
+  background-color: #EDEFEE;
   padding: 40px;
 }
 
