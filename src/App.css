@@ -500,20 +500,19 @@ footer img {
 .booking-page {
   display: grid;
   margin: 40px;
-  justify-content: center;
   justify-items: center;
 }
 
 form {
   display: grid;
-  gap: 20px;
+  gap: 4px;
   background-color: #EDEFEE;
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 800px; /* Adjust max-width as needed */
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive columns */
 }
 
 .text-field {
@@ -565,7 +564,6 @@ form {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;
-  grid-column: span 2; /* Span button across two columns */
 }
 
 .text-field button:hover {
@@ -578,6 +576,26 @@ form {
   background-color: #e8c944;
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+  form {
+    display: grid;
+    gap: 4px;
+    background-color: #EDEFEE;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 250px; /* Adjust max-width as needed */
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  }
+
+  .booking-page {
+    display: grid;
+    margin: 40px 0;
+    justify-items: center;
+  }
 }
 
 /* Booking Styles End */

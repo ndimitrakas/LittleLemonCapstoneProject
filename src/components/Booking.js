@@ -90,7 +90,7 @@ const BookingPage = () => {
             min="1"
           />
         </div>
-        <button type="submit">Book Now</button>
+            <button type="submit">Book Now</button>
       </form>
     </div>
   );
