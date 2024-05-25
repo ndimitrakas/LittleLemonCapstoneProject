@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const BookingPage = () => {
+const BookingForm = ({ availableTimes, setAvailableTimes }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,8 +19,6 @@ const BookingPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically handle the form submission,
-    // e.g., sending the data to a backend server
     console.log('Form submitted:', formData);
     alert('Booking confirmed!');
   };
@@ -71,14 +69,13 @@ const BookingPage = () => {
         </div>
         <div className="text-field">
           <label>Time:</label>
-          <select id="res-time ">
-            <option>17:00</option>
-            <option>18:00</option>
-            <option>19:00</option>
-            <option>20:00</option>
-            <option>21:00</option>
-            <option>22:00</option>
-           </select>
+          <select name="time" value={formData.time} onChange={handleChange}>
+          {availableTimes.map((time) => (
+            <option key={time} value={time}>
+              {time}
+            </option>
+          ))}
+          </select>
         </div>
         <div className="text-field">
           <label>Number of Guests:</label>
@@ -104,4 +101,4 @@ const BookingPage = () => {
   );
 };
 
-export default BookingPage;
+export default BookingForm;
