@@ -1,5 +1,6 @@
 import React from 'react';
 import restaurant from '../assets/restaurant.jpg'
+import { Link } from 'react-router-dom';
 
 function Hero() {
   return (
@@ -16,7 +17,7 @@ function Hero() {
                 meal is a celebration of taste and quality.
                 Come in and savor the best that Little Lemon has to offer.
             </p>
-            <button>Reserve a Table</button>
+            <button><Link to="/booking">Reserve a Table</Link></button>
         </div>
         <img src={restaurant} alt='Little Lemon Outdoor Dining'/>
     </section>
