@@ -29,7 +29,7 @@ const BookingPage = () => {
     <div className="booking-page">
       <h1>Book a Table</h1>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="text-field">
           <label>Name:</label>
           <input
             type="text"
@@ -39,7 +39,7 @@ const BookingPage = () => {
             required
           />
         </div>
-        <div>
+        <div className="text-field">
           <label>Email:</label>
           <input
             type="email"
@@ -49,7 +49,7 @@ const BookingPage = () => {
             required
           />
         </div>
-        <div>
+        <div className="text-field">
           <label>Phone:</label>
           <input
             type="tel"
@@ -59,7 +59,7 @@ const BookingPage = () => {
             required
           />
         </div>
-        <div>
+        <div className="text-field">
           <label>Date:</label>
           <input
             type="date"
@@ -69,7 +69,7 @@ const BookingPage = () => {
             required
           />
         </div>
-        <div>
+        <div className="text-field">
           <label>Time:</label>
           <input
             type="time"
@@ -79,7 +79,7 @@ const BookingPage = () => {
             required
           />
         </div>
-        <div>
+        <div className="text-field">
           <label>Number of Guests:</label>
           <input
             type="number"
@@ -90,7 +90,7 @@ const BookingPage = () => {
             min="1"
           />
         </div>
-        <button type="submit">Book Now</button>
+            <button type="submit">Book Now</button>
       </form>
     </div>
   );

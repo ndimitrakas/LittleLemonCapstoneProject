@@ -1,7 +1,4 @@
 /* Original styling from create-react app */
-.App {
-  text-align: center;
-}
 
 .App-logo {
   height: 40vmin;
@@ -497,3 +494,108 @@ footer img {
 }
 
 /* Footer Styles End */
+
+/* Booking Styles Start */
+
+.booking-page {
+  display: grid;
+  margin: 40px;
+  justify-items: center;
+}
+
+form {
+  display: grid;
+  gap: 4px;
+  background-color: #EDEFEE;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Adjust max-width as needed */
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive columns */
+}
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.text-field label {
+  font-size: 16px;
+  color: #495e57;
+  margin-bottom: 5px;
+}
+
+.text-field input,
+.text-field textarea,
+.text-field select {
+  padding: 12px;
+  border: 2px solid #495e57;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: "Markazi Text", serif;
+  color: #333;
+  background-color: #EDEFEE;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-field input:focus,
+.text-field textarea:focus,
+.text-field select:focus {
+  border-color: #EE9972;
+  box-shadow: 0 0 5px rgba(238, 153, 114, 0.5);
+  outline: none;
+}
+
+.text-field textarea {
+  resize: vertical;
+  grid-column: span 2; /* Span textarea across two columns */
+}
+
+.text-field button {
+  background-color: #495e57;
+  color: #EDEFEE;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.text-field button:hover {
+  background-color: #f4e04d;
+  color: #495e57;
+  transform: translateY(-2px);
+}
+
+.text-field button:active {
+  background-color: #e8c944;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+  form {
+    display: grid;
+    gap: 4px;
+    background-color: #EDEFEE;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 250px; /* Adjust max-width as needed */
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  }
+
+  .booking-page {
+    display: grid;
+    margin: 40px 0;
+    justify-items: center;
+  }
+}
+
+/* Booking Styles End */
