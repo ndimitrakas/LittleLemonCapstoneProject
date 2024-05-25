@@ -220,6 +220,10 @@ header {
 
 /* Specials Style Start */
 
+#price {
+  color: #495e57;
+}
+
 .specials button:hover {
   background-color: #f4e04d;
   color: black;
