@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Hero() {
   return (
     <section className="hero">
-        <div class='hero-content'>
+        <div className='hero-content'>
             <h1>Welcome to Little Lemon</h1>
             <h3>Chicago</h3>
             <p>Discover the vibrant flavors and warm ambiance

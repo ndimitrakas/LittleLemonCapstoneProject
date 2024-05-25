@@ -16,16 +16,16 @@ function Ratings() {
 
   return (
     <section className="ratings">
-      <div class='ratings-header'>
+      <div className='ratings-header'>
         <h2>Testimonials</h2>
       </div>
       <ul>
         {testimonials.map(testimonial => (
           <li key={testimonial.id}>
-            <img class="customer-ratings" src={ratings} alt='5 stars'/>
+            <img className="customer-ratings" src={ratings} alt='5 stars'/>
             <h3>"{testimonial.feedback}"</h3>
-            <div class='customer-info'>
-              <img class="customer-profile-images" src={testimonial.image} alt='individual persons headshot'/>
+            <div className='customer-info'>
+              <img className="customer-profile-images" src={testimonial.image} alt='individual persons headshot'/>
               <p className="customer-name">{testimonial.name}</p>
             </div>
           </li>

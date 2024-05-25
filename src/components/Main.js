@@ -5,7 +5,7 @@ import BookingPage from './BookingPage';
 import Header from './Header';
 import Footer from './Footer';
 
-const initializeTimes = () => [
+export const initializeTimes = () => [
     '17:00',
     '18:00',
     '19:00',
@@ -14,8 +14,7 @@ const initializeTimes = () => [
     '22:00'
 ];
 
-// Define the updateTimes function
-const updateTimes = (state, action) => {
+export const updateTimes = (state, action) => {
     switch (action.type) {
         case 'UPDATE_TIMES':
             return initializeTimes();
