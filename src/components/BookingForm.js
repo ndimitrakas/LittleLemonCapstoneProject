@@ -6,7 +6,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
     email: '',
     phone: '',
     date: '',
-    time: availableTimes[0],
+    time: '',
     guests: '',
   });
 
