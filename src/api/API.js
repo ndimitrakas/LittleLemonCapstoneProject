@@ -1,29 +1,35 @@
-const seededRandom = function (seed) {
-    var m = 2 ** 35 - 31;
-    var a = 185852;
-    var s = seed % m;
-    return function () {
-      return (s = (s * a) % m) / m;
-    };
+const availableTimesByDate = {
+    '2024-05-25': ['10:00', '11:00', '12:00'],
+    '2024-05-26': ['10:00', '11:00', '12:00'],
+    '2024-05-27': ['14:00', '15:00', '16:00']
   };
 
-  export function fetchAPI(date) {
-    let result = [];
-    let dt = new Date(date);
-    let seed = dt.getDate();
 
-    let random = seededRandom(seed);
-    for (let i = 17; i <= 23; i++) {
-      if (random() < 0.5) {
-        result.push(i + ":00");
-      }
-      if (random() < 0.5) {
-        result.push(i + ":30");
-      }
-    }
-    return result;
+  const fetchAPI = (date) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() =>{
+            if(availableTimesByDate[date]) {
+                resolve(availableTimesByDate[date])
+            }
+            else{
+                reject(new Error('No available times for the selected date.'));
+            }
+        } , 1000)
+    })
   }
 
-  export function submitAPI(formData) {
-    return true;
-  }
+  const submitAPI = (formData) => {
+    availableTimesByDate[formData.date] = availableTimesByDate[formData.date].filter(time => time !== formData.time);
+
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (formData) {
+          resolve(true); // Simulate successful submission
+        } else {
+          reject(new Error('Form submission failed.'));
+        }
+      }, 1000); // Simulate API delay
+    });
+  };
+
+  export{fetchAPI,submitAPI}
