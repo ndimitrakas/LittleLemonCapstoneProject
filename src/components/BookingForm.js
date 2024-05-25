@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
 
-const BookingForm = ({ availableTimes, setAvailableTimes }) => {
+const BookingForm = ({ availableTimes, dispatch }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     date: '',
-    time: '',
+    time: availableTimes[0],
     guests: '',
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: value,
+    }));
+    if (name === 'date') {
+        dispatch({ type: 'UPDATE_TIMES', date: value });
+    }
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
