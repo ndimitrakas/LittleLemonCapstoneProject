@@ -71,13 +71,14 @@ const BookingPage = () => {
         </div>
         <div className="text-field">
           <label>Time:</label>
-          <input
-            type="time"
-            name="time"
-            value={formData.time}
-            onChange={handleChange}
-            required
-          />
+          <select id="res-time ">
+            <option>17:00</option>
+            <option>18:00</option>
+            <option>19:00</option>
+            <option>20:00</option>
+            <option>21:00</option>
+            <option>22:00</option>
+           </select>
         </div>
         <div className="text-field">
           <label>Number of Guests:</label>
@@ -90,7 +91,14 @@ const BookingPage = () => {
             min="1"
           />
         </div>
-            <button type="submit">Book Now</button>
+        <div className="text-field">
+            <label for="occasion">Occasion</label>
+            <select id="occasion">
+                <option>Birthday</option>
+                <option>Anniversary</option>
+            </select>
+        </div>
+        <button type="submit">Book Now</button>
       </form>
     </div>
   );
