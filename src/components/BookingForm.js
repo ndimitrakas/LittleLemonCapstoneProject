@@ -74,7 +74,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         <div className="text-field">
           <label>Time:</label>
           <select name="time" value={formData.time} onChange={handleChange}>
-          {availableTimes.map((time) => (
+          {availableTimes && availableTimes.map((time) => (
             <option key={time} value={time}>
               {time}
             </option>
