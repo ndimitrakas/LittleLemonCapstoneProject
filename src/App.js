@@ -1,23 +1,15 @@
-import './App.css';
+// src/App.js
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Specials from './components/Specials';
-import Ratings from './components/Ratings';
-import Chicago from './components/Chicago';
-import Footer from './components/Footer';
+import Main from './components/Main';
+import './App.css';
 
 function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <Specials />
-      <Ratings />
-      <Chicago />
-      <Footer />
-    </>
+    <div className="App">
+      <Main />
+    </div>
   );
 }
 
 export default App;
+
