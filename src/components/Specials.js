@@ -22,7 +22,7 @@ function Specials() {
         <div className='specials-card-view'>
             {specials.map(special => (
                 <li key={special.id}>
-                    <img src={special.image} alt='image of special'/>
+                    <img src={special.image} alt='special dish'/>
                     <div className='specials-card-header'>
                         <h3>{special.name}</h3>
                         <h3 id='price'>{special.price}</h3>
