@@ -1,24 +1,31 @@
 import React, { useState } from 'react';
 
-const BookingForm = ({ availableTimes, dispatch }) => {
+const BookingForm = ({ availableTimes, dispatch, setSelectedDate }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     date: '',
-    time: availableTimes[0],
+    time: '',
     guests: '',
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-        ...prevFormData,
-        [name]: value,
-    }));
     if (name === 'date') {
-        dispatch({ type: 'UPDATE_TIMES', date: value });
-    }
+      const selectedDate = new Date(value + "T00:00:00");
+      setSelectedDate(selectedDate);
+      const formattedDate = selectedDate.toISOString().split('T')[0];
+      setFormData((prevFormData) => ({
+          ...prevFormData,
+          [name]: formattedDate,
+      }));
+  } else {
+      setFormData((prevFormData) => ({
+          ...prevFormData,
+          [name]: value,
+      }));
+  }
 };
 
   const handleSubmit = (e) => {
@@ -74,7 +81,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         <div className="text-field">
           <label>Time:</label>
           <select name="time" value={formData.time} onChange={handleChange}>
-          {availableTimes.map((time) => (
+          {availableTimes && availableTimes.map((time) => (
             <option key={time} value={time}>
               {time}
             </option>
