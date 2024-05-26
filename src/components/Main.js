@@ -18,7 +18,7 @@ export const initializeTimes = () => [
 export const updateTimes = (state, action) => {
     switch (action.type) {
         case 'UPDATE_TIMES':
-            return action.payload;
+            return action.payload || initializeTimes();
         default:
             return state;
     }

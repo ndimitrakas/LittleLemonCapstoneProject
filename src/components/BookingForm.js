@@ -12,15 +12,20 @@ const BookingForm = ({ availableTimes, dispatch, setSelectedDate }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-        ...prevFormData,
-        [name]: value,
-    }));
     if (name === 'date') {
-      const selectedDate = new Date(value);
+      const selectedDate = new Date(value + "T00:00:00");
       setSelectedDate(selectedDate);
-      dispatch({ type: 'UPDATE_TIMES', date: value });
-    }
+      const formattedDate = selectedDate.toISOString().split('T')[0];
+      setFormData((prevFormData) => ({
+          ...prevFormData,
+          [name]: formattedDate,
+      }));
+  } else {
+      setFormData((prevFormData) => ({
+          ...prevFormData,
+          [name]: value,
+      }));
+  }
 };
 
   const handleSubmit = (e) => {
