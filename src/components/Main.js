@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import HomePage from './HomePage';
 import BookingPage from './BookingPage';
 import Header from './Header';
@@ -7,26 +7,19 @@ import Footer from './Footer';
 import ConfirmedBooking from './BookingConfirmation';
 import { fetchAPI, submitAPI } from '../api/API'
 
-export const initializeTimes = () => [
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00'
-];
+
 
 export const updateTimes = (state, action) => {
     switch (action.type) {
         case 'UPDATE_TIMES':
-            return action.payload || initializeTimes();
+            return action.payload;
         default:
             return state;
     }
 };
 
 const Main = () => {
-    const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+    const [availableTimes, dispatch] = useReducer(updateTimes, []);
     const [selectedDate, setSelectedDate] = useState(new Date());
     const navigate = useNavigate();
 
