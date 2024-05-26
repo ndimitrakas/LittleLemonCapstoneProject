@@ -1,10 +1,10 @@
 import React from 'react';
 import BookingForm from './BookingForm';
 
-const BookingPage = ({ availableTimes, dispatch }) => {
+const BookingPage = ({ availableTimes, dispatch, setSelectedDate }) => {
   return (
     <div className="booking-page">
-      <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+      <BookingForm availableTimes={availableTimes} dispatch={dispatch} setSelectedDate={setSelectedDate}/>
     </div>
   );
 };

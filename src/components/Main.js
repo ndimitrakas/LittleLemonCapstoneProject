@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import BookingPage from './BookingPage';
@@ -18,7 +18,7 @@ export const initializeTimes = () => [
 export const updateTimes = (state, action) => {
     switch (action.type) {
         case 'UPDATE_TIMES':
-            return initializeTimes();
+            return action.payload;
         default:
             return state;
     }
@@ -26,18 +26,18 @@ export const updateTimes = (state, action) => {
 
 const Main = () => {
     const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+    const [selectedDate, setSelectedDate] = useState(new Date());
 
     // Function to fetch available times for today's date
-    const fetchAvailableTimes = async () => {
-        const today = new Date();
-        const times = await fetchAPI(today);
+    const fetchAvailableTimes = async (date) => {
+        const times = await fetchAPI(date);
         dispatch({ type: 'UPDATE_TIMES', payload: times });
     };
 
     // Fetch available times when component mounts
     useEffect(() => {
-        fetchAvailableTimes();
-    }, []); // Run once on component mount
+        fetchAvailableTimes(selectedDate);
+    }, [selectedDate]);
 
   return (
     <Router>
@@ -45,8 +45,7 @@ const Main = () => {
             <Header />
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} />} />
-
+                <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} setSelectedDate={setSelectedDate}/>} />
             </Routes>
             <Footer />
         </div>

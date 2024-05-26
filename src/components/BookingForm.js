@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const BookingForm = ({ availableTimes, dispatch }) => {
+const BookingForm = ({ availableTimes, dispatch, setSelectedDate }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,7 +17,9 @@ const BookingForm = ({ availableTimes, dispatch }) => {
         [name]: value,
     }));
     if (name === 'date') {
-        dispatch({ type: 'UPDATE_TIMES', date: value });
+      const selectedDate = new Date(value);
+      setSelectedDate(selectedDate);
+      dispatch({ type: 'UPDATE_TIMES', date: value });
     }
 };
 
