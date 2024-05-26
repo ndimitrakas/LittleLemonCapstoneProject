@@ -42,6 +42,7 @@ const BookingForm = ({ availableTimes, dispatch, setSelectedDate, submitForm }) 
         <div className="text-field">
           <label>Name:</label>
           <input
+            data-testid="name-input"
             type="text"
             name="name"
             value={formData.name}

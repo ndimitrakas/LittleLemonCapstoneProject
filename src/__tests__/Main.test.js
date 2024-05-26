@@ -1,9 +1,17 @@
 import { updateTimes } from '../components/Main';
 
-// Unit test for updateTimes function
-test('updateTimes returns the same value that is provided in the state', () => {
-  const initialState = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-  const action = { type: 'UPDATE_TIMES' };
+describe('updateTimes reducer', () => {
+  it('should handle UPDATE_TIMES action', () => {
+    const initialState = ['10:00', '11:00', '12:00'];
+    const action = { type: 'UPDATE_TIMES', payload: ['13:00', '14:00', '15:00'] };
 
-  expect(updateTimes(initialState, action)).toEqual(initialState);
+    expect(updateTimes(initialState, action)).toEqual(['13:00', '14:00', '15:00']);
+  });
+
+  it('should handle unknown action type', () => {
+    const initialState = ['10:00', '11:00', '12:00'];
+    const action = { type: 'UNKNOWN_ACTION' };
+
+    expect(updateTimes(initialState, action)).toEqual(initialState);
+  });
 });
