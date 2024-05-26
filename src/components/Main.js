@@ -7,8 +7,6 @@ import Footer from './Footer';
 import ConfirmedBooking from './BookingConfirmation';
 import { fetchAPI, submitAPI } from '../api/API'
 
-
-
 export const updateTimes = (state, action) => {
     switch (action.type) {
         case 'UPDATE_TIMES':
