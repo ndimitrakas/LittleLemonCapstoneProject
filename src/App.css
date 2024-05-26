@@ -599,3 +599,42 @@ form {
 }
 
 /* Booking Styles End */
+
+/* Booking Confirmation Styles End */
+
+.booking-confirmation {
+  display: grid;
+  justify-items: center;
+  margin: 100px;
+}
+
+.booking-confirmation img {
+  height: 500px;
+  width: auto;
+  border-radius: 16px;
+}
+
+.booking-confirmation p {
+  margin: 10px;
+  text-align: center;
+}
+
+.booking-confirmation h2 {
+  margin-top: 10px;
+}
+
+@media (max-width: 980px) {
+  .booking-confirmation img {
+    height: 200px;
+    width: auto;
+    border-radius: 16px;
+  }
+
+  .booking-confirmation {
+    display: grid;
+    justify-items: center;
+    margin: 100px 0;
+  }
+}
+
+/* Booking Confirmation Styles End */

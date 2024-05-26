@@ -1,10 +1,11 @@
 import React, { useEffect, useReducer, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import HomePage from './HomePage';
 import BookingPage from './BookingPage';
 import Header from './Header';
 import Footer from './Footer';
-import { fetchAPI } from '../api/API'
+import ConfirmedBooking from './BookingConfirmation';
+import { fetchAPI, submitAPI } from '../api/API'
 
 export const initializeTimes = () => [
     '17:00',
@@ -27,29 +28,40 @@ export const updateTimes = (state, action) => {
 const Main = () => {
     const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
     const [selectedDate, setSelectedDate] = useState(new Date());
+    const navigate = useNavigate();
 
-    // Function to fetch available times for today's date
     const fetchAvailableTimes = async (date) => {
         const times = await fetchAPI(date);
         dispatch({ type: 'UPDATE_TIMES', payload: times });
     };
 
-    // Fetch available times when component mounts
     useEffect(() => {
         fetchAvailableTimes(selectedDate);
     }, [selectedDate]);
+    const submitForm = async (formData) => {
+        try {
+            const response = await submitAPI(formData);
+            if (response) {
+                navigate('/booking-confirmed');
+            } else {
+                alert('Failed to submit booking.');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('Failed to submit booking.');
+        }
+    };
 
   return (
-    <Router>
-        <div>
-            <Header />
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} setSelectedDate={setSelectedDate}/>} />
-            </Routes>
-            <Footer />
-        </div>
-    </Router>
+    <div>
+        <Header />
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} setSelectedDate={setSelectedDate} submitForm={submitForm}/>} />
+            <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
+        </Routes>
+        <Footer />
+    </div>
   );
 };
 

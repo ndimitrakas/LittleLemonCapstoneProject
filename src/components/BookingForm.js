@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const BookingForm = ({ availableTimes, dispatch, setSelectedDate }) => {
+const BookingForm = ({ availableTimes, dispatch, setSelectedDate, submitForm }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -8,6 +8,7 @@ const BookingForm = ({ availableTimes, dispatch, setSelectedDate }) => {
     date: '',
     time: '',
     guests: '',
+    occasion: ''
   });
 
   const handleChange = (e) => {
@@ -30,8 +31,8 @@ const BookingForm = ({ availableTimes, dispatch, setSelectedDate }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Booking confirmed!');
+    // Call the submitForm function passed from the parent component
+    submitForm(formData);
   };
 
   return (
